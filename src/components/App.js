@@ -1,7 +1,11 @@
 import video from "../data/video.js";
+import Views from "./Views"
+import Votes from "./Votes"
+import Comments from "./Comments"
+
 
 function App() {
-  console.log("Here's your data:", video);
+  console.log("Here's your data:", video.views);
 
   return (
     <div className="App">
@@ -13,6 +17,10 @@ function App() {
         allowFullScreen
         title="Thinking in React"
       />
+      <h1>React Today and Tomorrow and 90% Cleaner React With Hooks</h1>
+      <Views viewcount = {video}/>
+      <Votes/>
+      <Comments/>
     </div>
   );
 }
