@@ -1,11 +1,16 @@
 import video from "../data/video.js";
 import Views from "./Views"
-import Votes from "./Votes"
+import Incvotes from "./Incvotes"
 import Comments from "./Comments"
-
+import React, { useState } from "react";
+import Decvotes from "./Decvotes";
 
 function App() {
   console.log("Here's your data:", video.views);
+
+  const [upVote, setUpVote] = useState(0)
+  const [downVote, setDownVote] = useState(1)
+
 
   return (
     <div className="App">
@@ -18,9 +23,10 @@ function App() {
         title="Thinking in React"
       />
       <h1>React Today and Tomorrow and 90% Cleaner React With Hooks</h1>
-      <Views viewcount = {video}/>
-      <Votes/>
-      <Comments/>
+      <Views viewcount={video.views} uploaded={video.createdAt} />
+      <Incvotes upVote={upVote} onSetUpVote={setUpVote} />
+      <Decvotes downVote={downVote} onSetDownVote={setDownVote} />
+      <Comments />
     </div>
   );
 }
