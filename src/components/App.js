@@ -10,7 +10,7 @@ function App() {
 
   const [upVote, setUpVote] = useState(video.upvotes)
   const [downVote, setDownVote] = useState(video.downvotes)
-  const [commentsView, setCommentsView] = useState(false)
+  
 
   // function toggleComments() {
   //   setCommentsView(!commentsView)
@@ -29,7 +29,7 @@ function App() {
       <Views viewcount={video.views} uploaded={video.createdAt} />
       <Incvotes upVote={upVote} onSetUpVote={setUpVote} />
       <Decvotes downVote={downVote} onSetDownVote={setDownVote} />
-      <Comments comments={video.comments} commentsView = {commentsView} setCommentsView= {setCommentsView}/>
+      <Comments comments={video.comments}/>
     </div>
   );
 }
