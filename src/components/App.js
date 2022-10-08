@@ -6,12 +6,15 @@ import React, { useState } from "react";
 import Decvotes from "./Decvotes";
 
 function App() {
-  console.log("Here's your data:", video.views);
+  console.log("Here's your data:", video.views)
 
-  const [upVote, setUpVote] = useState(0)
-  const [downVote, setDownVote] = useState(1)
+  const [upVote, setUpVote] = useState(video.upvotes)
+  const [downVote, setDownVote] = useState(video.downvotes)
+  const [commentsView, setCommentsView] = useState(false)
 
-
+  // function toggleComments() {
+  //   setCommentsView(!commentsView)
+  // }
   return (
     <div className="App">
       <iframe
@@ -26,7 +29,7 @@ function App() {
       <Views viewcount={video.views} uploaded={video.createdAt} />
       <Incvotes upVote={upVote} onSetUpVote={setUpVote} />
       <Decvotes downVote={downVote} onSetDownVote={setDownVote} />
-      <Comments />
+      <Comments comments={video.comments} commentsView = {commentsView} SetCommentsView= {setCommentsView}/>
     </div>
   );
 }
