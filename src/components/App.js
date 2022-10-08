@@ -29,7 +29,7 @@ function App() {
       <Views viewcount={video.views} uploaded={video.createdAt} />
       <Incvotes upVote={upVote} onSetUpVote={setUpVote} />
       <Decvotes downVote={downVote} onSetDownVote={setDownVote} />
-      <Comments comments={video.comments} commentsView = {commentsView} SetCommentsView= {setCommentsView}/>
+      <Comments comments={video.comments} commentsView = {commentsView} setCommentsView= {setCommentsView}/>
     </div>
   );
 }
