@@ -26,9 +26,9 @@ function App() {
         title="Thinking in React"
       />
       <h1>React Today and Tomorrow and 90% Cleaner React With Hooks</h1>
-      <Views viewcount={video.views} uploaded={video.createdAt} />
-      <Incvotes upVote={upVote} onSetUpVote={setUpVote} />
-      <Decvotes downVote={downVote} onSetDownVote={setDownVote} />
+      <Views key= "views" viewcount={video.views} uploaded={video.createdAt} />
+      <Incvotes key= "likes" upVote={upVote} onSetUpVote={setUpVote} />
+      <Decvotes key= "dislikes" downVote={downVote} onSetDownVote={setDownVote} />
       <Comments comments={video.comments}/>
     </div>
   );
